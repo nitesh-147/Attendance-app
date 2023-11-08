@@ -1,0 +1,21 @@
+.flex{
+    display:flex;
+    padding: 10px 5vw;
+    justify-content: space-between;
+}
+
+.main{
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    font-size:1.5vw;
+}
+
+.record{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 5vw;
+    border-bottom: 1px solid;
+    font-size: 1.2vw;
+}

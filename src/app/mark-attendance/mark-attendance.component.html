@@ -1,0 +1,28 @@
+<form class="host" (ngSubmit)="onSubmit()">
+    <h1>Mark Attendance</h1>
+    <mat-form-field>
+        <mat-label>RollNo</mat-label>
+        <mat-select [(ngModel)]="rollNo" name="rollNo" (ngModelChange)="onChangeRollNo()">
+            <mat-option *ngFor="let student of studentsList" [value]="student.rollNo">
+                {{student.rollNo}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Ex: Nitesh" [(ngModel)]="name" name="name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="date" [(ngModel)]="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select name="status" [(ngModel)]="status">
+            <mat-option value="Present">Present</mat-option>
+            <mat-option value="Absent">Absent</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-button class="bg bg-primary btn-lg" [disabled]="'true'">Mark Attendance</button>
+</form>

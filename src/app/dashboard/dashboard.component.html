@@ -1,0 +1,51 @@
+<div class="main">
+  <button class="btn btn-dark addBtn" (click)="routeAddStudent()">Add Student</button>
+  <div class="example-container mat-elevation-z8">
+    <h4 *ngIf="loadingMode">Loading Data.....</h4>
+    <table class="table table-bordered">
+      <tr class="blue" style="font-size: 20px;" *ngIf="studentsList.length===0">
+        <td colspan="6">
+          No students added
+        </td>
+      </tr>
+      <thead>
+        <tr>
+          <th *ngFor="let column of displayedColumns">
+            {{column}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of studentsList | slice:pageIndex*pageSize:pageIndex*pageSize+pageSize; index as i"
+          [ngClass]="i%2==0? 'orange':'blue'">
+          <td>
+            {{pageIndex*pageSize+i+1}}
+          </td>
+          <td>
+            {{student.rollNo}}
+          </td>
+          <td>
+            {{student.name}}
+          </td>
+          <td>
+            {{student.gender}}
+          </td>
+          <td>
+            {{student.email}}
+          </td>
+          <td class="action">
+            <button class="btn btn-info" [routerLink]="'/view/'+student.rollNo">view</button>
+            <button class="btn btn-warning" [routerLink]="'/edit/'+student.rollNo">edit</button>
+            <button class="btn btn-danger" (click)="onDelete(student.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"
+      (page)="onPageChange($event)" [length]="studentsList.length">
+    </mat-paginator>
+  </div>
+</div>

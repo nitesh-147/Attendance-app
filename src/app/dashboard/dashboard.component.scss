@@ -1,0 +1,44 @@
+
+.main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding:40px;
+}
+
+.addBtn{
+    width: 150px;
+    margin-left: calc(100% - 150px);
+    justify-content: flex-end;
+}
+
+th{
+    background-color: black;
+    color: white;
+}
+
+
+.blue td{
+    padding:10px;
+    background-color: rgb(108, 222, 222);
+}
+
+.orange td{
+    background-color: orange;
+}
+
+
+.mat-table {
+    overflow-x: auto;
+  }
+
+  .action{
+    display:flex;
+    column-gap:0.5vw;
+    justify-content: space-evenly;
+  }
+
+  .action button{
+    padding:0 10px;
+    height:30px;
+  }

@@ -1,0 +1,25 @@
+<form class="host" (submit)="onSubmit()">
+    <h1>Edit Student</h1>
+    <mat-form-field>
+        <mat-label>RollNo</mat-label>
+        <input matInput placeholder="Ex: 101" name="rollNo" [(ngModel)]="rollNo">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Ex: Nitesh" name="name" [(ngModel)]="name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="Ex: pat@example.com" name="email" required [(ngModel)]="email">
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select name="gender" [(ngModel)]="gender">
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="Rather Not say">Rather Not say</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-button class="bg bg-primary btn-lg" type="submit">Update Student</button>
+</form>

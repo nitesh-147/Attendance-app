@@ -1,0 +1,25 @@
+<div class="main">
+    <div class="details mat-elevation-z8">
+        <h1>Student Details</h1>
+        <div class="flex">
+            <div class="left">
+                <p>Name: {{studentData.name}}</p>
+                <p>Email: {{studentData.email}}</p>
+            </div>
+            <div class="right">
+                <p>RollNo: {{studentData.rollNo}}</p>
+                <p>Gender: {{studentData.gender}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="attendance mat-elevation-z8">
+        <div *ngFor="let at of attendance" class="record">
+            <span>
+                {{at.date | date:'longDate'}}
+            </span>
+            <span>
+                {{at.status}}
+            </span>
+        </div>
+    </div>
+</div>

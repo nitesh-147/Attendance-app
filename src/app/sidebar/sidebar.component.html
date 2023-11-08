@@ -1,0 +1,34 @@
+<mat-toolbar color="disabled" class="mat-elevation-z8" [ngClass]="darkMode?'dark':''">
+    <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span routerLink="" class="logo"> <span>A</span>TTENDANCE <span>M</span>ANAGEMENT</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="toggleMode()">
+        <mat-icon>brightness_4</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start">
+        <mat-nav-list>
+            <mat-list-item>
+                <button routerLink="dashboard" routerLinkActive="active" class="text-white nav" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="addStudent" routerLinkActive="active" class="text-white nav" mat-button><mat-icon>add_circle_outline</mat-icon> Add Student</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="markAttendance" routerLinkActive="active" class="text-white nav" mat-button><mat-icon>edit</mat-icon> Mark Attendance</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="chart" routerLinkActive="active" class="text-white nav" mat-button><mat-icon>bar_chart</mat-icon> Chart</button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center;min-height: 600px;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

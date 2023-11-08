@@ -1,0 +1,25 @@
+<form class="host" [formGroup]="studentData" (submit)="onSubmit()">
+    <h1>Add Student</h1>
+    <mat-form-field>
+        <mat-label>RollNo</mat-label>
+        <input matInput placeholder="Ex: 101" formControlName="rollNo">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Ex: Nitesh" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="Ex: pat@example.com" required formControlName="email">
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="Rather Not say">Rather Not say</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-button class="bg bg-primary btn-lg" type="submit" [disabled]="'true'">Add Student</button>
+</form>

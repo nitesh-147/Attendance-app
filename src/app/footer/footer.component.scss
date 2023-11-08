@@ -1,0 +1,32 @@
+.main{
+    padding:30px;
+    height:150px;
+    background-color: rgb(16, 15, 15);
+    color:rgb(172, 164, 164);
+    display:flex;
+    justify-content: space-evenly;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+li{
+    cursor: pointer;
+    font-size: 1.2vw;
+}
+
+li:hover{
+    color:white;
+}
+
+.links{
+    display:flex;
+}
+
+.active{
+    color:white;
+}
